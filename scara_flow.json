@@ -1,0 +1,121 @@
+[
+    {
+        "id": "441ed3f3086f6a4f",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "10a1a3b9a999f77a",
+        "type": "debug",
+        "z": "441ed3f3086f6a4f",
+        "name": "monitor",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d46182d875d27d85",
+        "type": "serial out",
+        "z": "441ed3f3086f6a4f",
+        "name": "",
+        "serial": "6554710779a858f1",
+        "x": 590,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "0d697ae06ec9f741",
+        "type": "inject",
+        "z": "441ed3f3086f6a4f",
+        "name": "inditas",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"serialport\":\"COM5\",\"serialbaud\":9600,\"databits\":8,\"parity\":\"none\",\"stopbits\":1,\"enabled\":false}",
+        "payloadType": "json",
+        "x": 370,
+        "y": 380,
+        "wires": [
+            [
+                "d46182d875d27d85"
+            ]
+        ]
+    },
+    {
+        "id": "0eb9ce7637ec9b19",
+        "type": "inject",
+        "z": "441ed3f3086f6a4f",
+        "name": "leallitas",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"serialport\":\"COM5\",\"serialbaud\":9600,\"databits\":8,\"parity\":\"none\",\"stopbits\":1,\"enabled\":true}",
+        "payloadType": "json",
+        "x": 370,
+        "y": 520,
+        "wires": [
+            [
+                "d46182d875d27d85"
+            ]
+        ]
+    },
+    {
+        "id": "d6186dfbb5368a8d",
+        "type": "serial in",
+        "z": "441ed3f3086f6a4f",
+        "name": "",
+        "serial": "6554710779a858f1",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "10a1a3b9a999f77a"
+            ]
+        ]
+    },
+    {
+        "id": "6554710779a858f1",
+        "type": "serial-port",
+        "name": "COM5",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    }
+]
